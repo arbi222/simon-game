@@ -14,9 +14,16 @@ $(document).keypress(function(){
     $("#level-title").text("Level: " + level);
     nextSequence();
     started = true;
-  }
-
+  } 
 });
+
+$("#level-title").click(function(){
+  if (!started){
+    $("#level-title").text("Level: " + level);
+    nextSequence();
+    started = true;
+  } 
+})
 
 $(".btn").click(function(event){
   //var userChosenColour = event.target.id;
@@ -41,7 +48,7 @@ function checkAnswer(currentLevel){
     else{
         playSound("wrong");
         $("body").addClass("game-over");
-        $("#level-title").text("Game Over , Press Any Key to Restart the Game!");
+        $("#level-title").text("Game Over , Press A Key or Click Here to Restart the Game!");
 
         setTimeout(function(){
         $("body").removeClass("game-over");
